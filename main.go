@@ -26,7 +26,8 @@ import (
 func main() {
 	n := os.Args[1:]
 	nInt, err := strconv.Atoi(n[0])
-	if err != nil {
+	err2 := os.MkdirAll("dat", os.ModePerm)
+	if err != nil || err2 != nil {
 		log.Panic(err)
 	}
 	doNfiles(nInt)
